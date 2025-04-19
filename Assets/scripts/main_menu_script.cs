@@ -6,7 +6,7 @@ public class main_menu_script : MonoBehaviour
     public GameObject settings_panel;
     public void start_game()
     {
-        SceneManager.LoadScene("level-01");
+        SceneManager.LoadScene("Room 1");
     }
 
     public void exit_game()
