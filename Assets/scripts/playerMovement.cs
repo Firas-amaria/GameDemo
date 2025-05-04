@@ -8,12 +8,14 @@ public class playerMovement : MonoBehaviour
     private Vector2 direction;
     private Animator animator;
 
+    public static bool isPaused = false; // <--- Add this flag
     void Start()
     {
         animator = GetComponent<Animator>();
     }
     public void Update()
     {
+        if (isPaused) return; // <--- Stop movement if paused
         TakeInput();
         Move();
 
