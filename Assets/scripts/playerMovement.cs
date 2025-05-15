@@ -4,21 +4,30 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour
 {
 
-    public float speed =5;
+    public float speed = 5;
     private Vector2 direction;
     private Animator animator;
-
+    public InventoryScript inventoryScript;
+    private bool inventoryOpen = false;
     public static bool isPaused = false; // <--- Add this flag
+
+
+
+
     void Start()
     {
         animator = GetComponent<Animator>();
+
     }
     public void Update()
     {
+        HandleInventoryToggle();
+
         if (isPaused) return; // <--- Stop movement if paused
         TakeInput();
         Move();
 
+        
     }
     private void Move()
     {
@@ -29,15 +38,34 @@ public class playerMovement : MonoBehaviour
         }
         else
         {
-            animator.SetLayerWeight(1 , 0);
+            animator.SetLayerWeight(1, 0);
         }
     }
 
+    private void HandleInventoryToggle()
+    {
+        if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.E))
+        {
+            inventoryOpen = !inventoryOpen;
+
+            if (inventoryOpen)
+            {
+                if (isPaused) return;
+                inventoryScript.OpenInventory();
+                isPaused = true;
+            }
+            else
+            {
+                inventoryScript.CloseInventory();
+                isPaused = false;
+            }
+        }
+    }
     private void TakeInput()
     {
         direction = Vector2.zero;
-        if (Input.GetKey(KeyCode.W)) 
-        { 
+        if (Input.GetKey(KeyCode.W))
+        {
             direction += Vector2.up;
         }
         if (Input.GetKey(KeyCode.A))
@@ -57,7 +85,7 @@ public class playerMovement : MonoBehaviour
     private void SetAnimatoeMovement(Vector2 direction)
     {
         animator.SetLayerWeight(1, 1);
-        animator.SetFloat("xDir" ,direction.x);
+        animator.SetFloat("xDir", direction.x);
         animator.SetFloat("yDir", direction.y);
         print(animator.GetFloat("xDir"));
     }
