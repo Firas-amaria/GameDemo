@@ -9,6 +9,8 @@
 .vs/
 .idea/
 .vscode/
+UserSettings/
+
 
 # Ignore Unity-generated metadata files
 *.csproj
