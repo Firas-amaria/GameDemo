@@ -30,3 +30,5 @@ UserSettings/
 # Ignore generated folders
 ExportedObj/
 .gradle/
+UserSettings/Layouts/default-6000.dwlt
+/UserSettings
