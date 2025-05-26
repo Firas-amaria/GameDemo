@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -352,7 +352,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -423,9 +423,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 00fbffff
-      m_LastClickedID: -1280
-      m_ExpandedIDs: ba5bffff44afffffa4afffff28e7ffffd8e8ffffdae8ffff02e9ffff04e9ffff3aeaffffc4ebffffa6faffff00fbffff0cfbffff
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: b6b1ffff44b3ffff9cb5ffffe8c1ffff50d8ffffeef8ffff2af9ffff38f9ffff74f9ffff82f9ffffa6f9ffffbef9ffffccf9ffff34faffff48faffff4afaffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1079,9 +1079,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 881.6765, y: 512.6757, z: 2.2801836}
+    m_Target: {x: 940.53406, y: 550.2492, z: 4.9609866}
     speed: 2
-    m_Value: {x: 873.4588, y: 486.5723, z: 1.995944}
+    m_Value: {x: 941.6013, y: 551.0254, z: 4.675741}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 2
@@ -1131,9 +1131,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 603.2141
+    m_Target: 605.3549
     speed: 2
-    m_Value: 631.6378
+    m_Value: 633.8795
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1300,23 +1300,23 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 16b60000
-    m_LastClickedID: 46614
-    m_ExpandedIDs: 000000002cb400002eb4000000ca9a3b
+    m_SelectedIDs: 86b80000
+    m_LastClickedID: 47238
+    m_ExpandedIDs: 0000000018b800001ab800001cb8000046c3000052c30000bac3000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Physics
-      m_OriginalName: Physics
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 46608
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 10}
@@ -1331,7 +1331,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 86f5ffffe6ad0000
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000002cb400002eb40000
+    m_ExpandedIDs: 0000000018b800001ab800001cb80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1359,7 +1359,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000052b20000ca6f0000f6c30000fac3000080e00000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
