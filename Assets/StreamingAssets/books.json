@@ -2,38 +2,92 @@
   "books": [
     {
       "slotKey": "room1_slot1",
-      "title": "Echoes of the Past",
-      "genre": "Mystery",
-      "author": "Lena Farrow",
-      "description": "A worn journal found in the academy basement.",
+      "title": "Echoes of the Labyrinth",
+      "genre": "Cryptography",
+      "author": "Professor R. Elias",
+      "description": "The first puzzle of the academy, written in twisted letters.",
       "pages": [
-        "It begins with a whisper.",
-        "The symbols align under the moon.",
-        "Seek the red door in Room 3."
+        "Entry 1 - The walls speak in riddles, or so the students claim.",
+        "They say the hallway hums when no one is there.",
+        "If you listen long enough, the humming resolves into rhythm.",
+        "I believe there is order in the nonsense... perhaps a shift?",
+        "Encrypted note found behind the painting: Wklv lv wkh iluvw phvvdjh."
       ]
     },
     {
       "slotKey": "room1_slot2",
-      "title": "The Alchemist's Notes",
-      "genre": "Alchemy",
-      "author": "V. Calder",
-      "description": "Scattered thoughts on hidden formulas.",
+      "title": "Notes from the East Wing",
+      "genre": "Cipher Record",
+      "author": "Archivist M.",
+      "description": "Recovered fragments from a student’s journal.",
       "pages": [
-        "Transmute silver by dawn.",
-        "Do not trust the golden ink.",
-        "Truth hides in the last page."
+        "Day 4 - While cataloging old scrolls, I noticed a repeated pattern: A, D, G...",
+        "It's as if the letters moved forward — by three?",
+        "I remember someone muttering: 'Three steps forward reveals the path.'",
+        "Most of the scrolls were irrelevant, but one contained this odd script:",
+        "Brx duh qrw dorrqh lq wklv sodfh."
+      ]
+    },
+    {
+      "slotKey": "room1_slot3",
+      "title": "Guardian’s Whisper",
+      "genre": "Encrypted Diary",
+      "author": "Unknown",
+      "description": "A silent voice from the walls of Room 1.",
+      "pages": [
+        "I watched them walk past the old gate again.",
+        "None of them noticed the third stone out of line on the floor.",
+        "Always the number three. Three torches. Three locks. Three eyes in the statue.",
+        "Maybe it's a code. Maybe it’s always been a code.",
+        "They left a final warning scratched into the floor: Wkh grru vwdqgv ehwzhhq wkh wudxwkv."
       ]
     },
     {
       "slotKey": "room2_slot1",
-      "title": "Field Notes",
-      "genre": "Research",
-      "author": "J. Mercer",
-      "description": "A leather-bound book with pressed leaves between pages.",
+      "title": "Alchemist’s Log",
+      "genre": "Alchemy",
+      "author": "Vincent E.",
+      "description": "A personal log describing failed transformations.",
       "pages": [
-        "Sample A reacted to moonlight.",
-        "Sample B dissolved under heat.",
-        "Cross-reference with Room 4 notes."
+        "Attempt #14 failed again — smoke and green residue.",
+        "The flask cracked under a blue flame. Next time, less salt.",
+        "Reminder: never mix mercury with powdered moonstone."
+      ]
+    },
+    {
+      "slotKey": "room2_slot2",
+      "title": "Field Notes: Herbs & Shadows",
+      "genre": "Research",
+      "author": "Dr. E. Hawthorne",
+      "description": "Sketches and field notes about plant reactions to light.",
+      "pages": [
+        "Sunroot glows under moonlight, dies in daylight.",
+        "Shadowvine curls when near heat. Possesses memory-like response.",
+        "Bring samples from Room 3’s greenhouse."
+      ]
+    },
+    {
+      "slotKey": "room3_slot1",
+      "title": "Watcher’s Observation",
+      "genre": "Surveillance",
+      "author": "Anonymous",
+      "description": "Unpublished report detailing mysterious movements.",
+      "pages": [
+        "Subject moved at 2:13 AM. No footsteps recorded.",
+        "Window opened without a breeze. Need thermal sweep.",
+        "Possible link to lower chamber sigils."
+      ]
+    },
+    {
+      "slotKey": "room3_slot2",
+      "title": "Dust & Echoes",
+      "genre": "Poetry",
+      "author": "Lyra Vale",
+      "description": "A collection of short poetic fragments left in the academy walls.",
+      "pages": [
+        "We walked with shadows, yet they knew our names.",
+        "Dust settled not, for silence was never still.",
+        "Let the echoes sing, when memory fades."
       ]
     }
   ]
