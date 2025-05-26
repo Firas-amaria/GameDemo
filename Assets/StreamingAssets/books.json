@@ -1,0 +1,40 @@
+{
+  "books": [
+    {
+      "slotKey": "room1_slot1",
+      "title": "Echoes of the Past",
+      "genre": "Mystery",
+      "author": "Lena Farrow",
+      "description": "A worn journal found in the academy basement.",
+      "pages": [
+        "It begins with a whisper.",
+        "The symbols align under the moon.",
+        "Seek the red door in Room 3."
+      ]
+    },
+    {
+      "slotKey": "room1_slot2",
+      "title": "The Alchemist's Notes",
+      "genre": "Alchemy",
+      "author": "V. Calder",
+      "description": "Scattered thoughts on hidden formulas.",
+      "pages": [
+        "Transmute silver by dawn.",
+        "Do not trust the golden ink.",
+        "Truth hides in the last page."
+      ]
+    },
+    {
+      "slotKey": "room2_slot1",
+      "title": "Field Notes",
+      "genre": "Research",
+      "author": "J. Mercer",
+      "description": "A leather-bound book with pressed leaves between pages.",
+      "pages": [
+        "Sample A reacted to moonlight.",
+        "Sample B dissolved under heat.",
+        "Cross-reference with Room 4 notes."
+      ]
+    }
+  ]
+}

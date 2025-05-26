@@ -13,7 +13,7 @@ public class InventoryUIManager : MonoBehaviour
     public TextMeshProUGUI descriptionText;
     public Button readBookButton;
 
-    //private BookDataModel currentBook;
+    private BookDataModel currentBook;
 
     private void Awake()
     {
@@ -29,21 +29,21 @@ public class InventoryUIManager : MonoBehaviour
         readBookButton.onClick.AddListener(OpenBookReader);
     }
 
-    //public void ShowBookInfo(BookDataModel book)
-    //{
-    //    currentBook = book;
-
-    //    titleText.text = "Title: " + book.title;
-    //    genreText.text = "Genre: " + book.genre;
-    //    authorText.text = "Author: " + book.author;
-    //    descriptionText.text = book.description;
-
-    //    readBookButton.gameObject.SetActive(true);
-    //}
-
-    private void OpenBookReader()
+    public void ShowBookInfo(BookDataModel book)
     {
-       // Debug.Log("Opening book: " + currentBook.title);
-        // TODO: Load BookReaderPanel and display currentBook.pages[]
+        currentBook = book;
+
+        titleText.text = "Title: " + book.title;
+        genreText.text = "Genre: " + book.genre;
+        authorText.text = "Author: " + book.author;
+        descriptionText.text = book.description;
+
+        readBookButton.gameObject.SetActive(true);
+    }
+
+    public void OpenBookReader()
+    {
+        Debug.Log("Opening book: " + currentBook.title);
+        BookReader.Instance.OpenBook(currentBook);
     }
 }
