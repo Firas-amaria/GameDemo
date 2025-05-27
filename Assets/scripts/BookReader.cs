@@ -49,6 +49,7 @@ public class BookReader : MonoBehaviour
         UpdatePage();
     }
 
+    [System.Obsolete]
     private void UpdatePage()
     {
         if (currentBook == null || currentBook.pages.Count == 0)
@@ -58,6 +59,10 @@ public class BookReader : MonoBehaviour
         }
 
         pageInputField.text = currentBook.pages[currentPage];
+        pageInputField.textComponent.enableWordWrapping = true;
+        pageInputField.textComponent.enableAutoSizing = false;
+        pageInputField.textComponent.alignment = TextAlignmentOptions.TopLeft;
+
 
         prevButton.interactable = currentPage > 0;
         nextButton.interactable = currentPage < currentBook.pages.Count - 1;
