@@ -160,4 +160,20 @@ public class BookReader : MonoBehaviour
         }
         return new string(result);
     }
+
+    public void SaveDecryptedNote()
+    {
+        string noteText = cipherOutputField.text;
+
+        if (string.IsNullOrWhiteSpace(noteText))
+        {
+            Debug.Log("Nothing to save.");
+            return;
+        }
+        Debug.Log(" saveing note : " + noteText);
+        SavedNotesManager.Instance.SaveNewNote(noteText);
+        Debug.Log("Note saved: " + noteText);
+    }
+
+
 }
