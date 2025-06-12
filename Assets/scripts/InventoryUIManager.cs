@@ -63,6 +63,7 @@ public class InventoryUIManager : MonoBehaviour
                 bookSlot.SetFound(true);
             }
         }
+        GameManager.Instance.SetUIState(true);
     }
 
     private void ClearContainers()
@@ -93,6 +94,12 @@ public class InventoryUIManager : MonoBehaviour
 
         readBookButton.gameObject.SetActive(true);
     }
+
+    public void RefreshInventoryUI()
+    {
+        PopulateBookSlots();
+    }
+
 
     public void OpenBookReader()
     {

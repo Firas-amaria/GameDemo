@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class UIManager : MonoBehaviour
@@ -8,14 +8,17 @@ public class UIManager : MonoBehaviour
     public GameObject messagePanel;
     public TMP_Text messageText;
 
-    public GameObject interactionResultPanel; // <- new reference!
+    public GameObject interactionResultPanel;
 
     void Awake()
     {
         if (Instance == null)
             Instance = this;
         else
+        {
             Destroy(gameObject);
+            return;
+        }
     }
 
     public void ShowMessage(string message)
@@ -24,25 +27,35 @@ public class UIManager : MonoBehaviour
         {
             messagePanel.SetActive(true);
             messageText.text = message;
+
+            GameManager.Instance?.SetUIState(true);  // 🟡 Block movement
         }
     }
 
     public void HideMessage()
     {
         if (messagePanel != null)
+        {
             messagePanel.SetActive(false);
+            GameManager.Instance?.SetUIState(false); // 🟢 Unblock movement
+        }
     }
 
     public void ShowInteractionResult()
     {
         if (interactionResultPanel != null)
+        {
             interactionResultPanel.SetActive(true);
+            GameManager.Instance?.SetUIState(true); // Optional
+        }
     }
 
     public void HideInteractionResult()
     {
         if (interactionResultPanel != null)
+        {
             interactionResultPanel.SetActive(false);
+            GameManager.Instance?.SetUIState(false); // Optional
+        }
     }
-
 }

@@ -13,9 +13,9 @@ scopes = {
 	"picker_visibility_flags.075BCD15" = "264"
 	"picker_item_size.075BCD15" = "96"
 	"picker_inspector.075BCD15" = "0"
-	"last_search.66F56946" = "t:GameObject t:playerMov"
+	"last_search.66F56946" = "inventory"
 	"OpenInspectorPreview.66F56946" = "0"
-	"currentGroup.66F56946" = "scene"
+	"currentGroup.66F56946" = "all"
 }
 providers = {
 	asset = {
@@ -72,6 +72,10 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"t:invent"
+	""
+	"t:intera"
+	"t:GameObject"
 	"t:GameObject t"
 	"t:GameObject Manager"
 	"t:InteractableObject Manager"
