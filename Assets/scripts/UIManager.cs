@@ -20,22 +20,29 @@ public class UIManager : MonoBehaviour
 
     public void ShowMessage(string message)
     {
-        messagePanel.SetActive(true);
-        messageText.text = message;
+        if (messagePanel != null && messageText != null)
+        {
+            messagePanel.SetActive(true);
+            messageText.text = message;
+        }
     }
 
     public void HideMessage()
     {
-        messagePanel.SetActive(false);
+        if (messagePanel != null)
+            messagePanel.SetActive(false);
     }
 
     public void ShowInteractionResult()
     {
-        interactionResultPanel.SetActive(true);
+        if (interactionResultPanel != null)
+            interactionResultPanel.SetActive(true);
     }
 
     public void HideInteractionResult()
     {
-        interactionResultPanel.SetActive(false);
+        if (interactionResultPanel != null)
+            interactionResultPanel.SetActive(false);
     }
+
 }

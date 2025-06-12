@@ -22,10 +22,15 @@ public class BookSlot : MonoBehaviour
         }
     }
 
-
     // Optional: Used to dim or reset icons visually (e.g., for found vs. not found)
     public void SetFound(bool isFound)
     {
-        iconImage.color = isFound ? Color.white : new Color(1, 1, 1, 0.3f); // Transparent for missing
+        if (iconImage == null)
+        {
+            Debug.LogWarning($"BookSlot ({slotKey}): iconImage is not assigned in the Inspector.");
+            return;
+        }
+
+        iconImage.color = isFound ? Color.white : new Color(1, 1, 1, 0.3f); // Dim if not found
     }
 }

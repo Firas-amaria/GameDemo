@@ -2,20 +2,20 @@ trackSelection = true
 refreshSearchWindowsInPlayMode = false
 pickerAdvancedUI = false
 fetchPreview = true
-defaultFlags = 0
+defaultFlags = 264
 keepOpen = true
 queryFolder = "Assets"
 onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
-	"picker_window_position_offset.075BCD15" = "408;395;320;550"
+	"picker_window_position_offset.075BCD15" = "408;251;320;550"
 	"picker_visibility_flags.075BCD15" = "264"
 	"picker_item_size.075BCD15" = "96"
 	"picker_inspector.075BCD15" = "0"
-	"last_search.66F56946" = ""
+	"last_search.66F56946" = "t:GameObject t:playerMov"
 	"OpenInspectorPreview.66F56946" = "0"
-	"currentGroup.66F56946" = null
+	"currentGroup.66F56946" = "scene"
 }
 providers = {
 	asset = {
@@ -72,6 +72,12 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"t:GameObject t"
+	"t:GameObject Manager"
+	"t:InteractableObject Manager"
+	"t:MonoScript Mangaer"
+	"t:InteractableObject mangaer"
+	"t:InteractableObject "
 ]
 searchItemFavorites = [
 ]
