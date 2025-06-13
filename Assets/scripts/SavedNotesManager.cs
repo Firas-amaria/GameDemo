@@ -20,7 +20,7 @@ public class SavedNotesManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            Debug.Log("SavedNotesManager ready");
+            //Debug.Log("SavedNotesManager ready");
         }
         else
         {

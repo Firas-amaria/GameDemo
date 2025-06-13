@@ -3,33 +3,54 @@ using UnityEngine;
 public enum InteractionType
 {
     UnlockBook,
-    UnlockCipher
+    UnlockCipher,
+    Trigger
 }
 
 public class InteractableComponent : MonoBehaviour, IInteractable
 {
+    [Header("Interaction Settings")]
     public InteractionType interactionType;
-    public string dataKey; // book slotKey or cipherKey
-    public string interactionID; // for one-time popup
-    public string interactionMessage = "Press X to interact";
+    public string dataKey;        // book slotKey or cipherKey (can be empty for Trigger)
+    public string interactionID;  // one-time panel trigger ID (can be empty)
 
+    [Header("UI Panels")]
+    public GameObject interactionPanel; // shown only once (set manually in scene)
+    public GameObject resultPanel;      // shown every time after interaction
+
+    [Header("Visuals")]
     public GameObject glowEffect;
 
     private bool isPlayerNear = false;
+    private bool hasShownPanel = false;
 
     public void Interact()
     {
         switch (interactionType)
         {
             case InteractionType.UnlockBook:
-                ProgressManager.Instance.UnlockBook(dataKey);
+                if (!string.IsNullOrEmpty(dataKey))
+                    ProgressManager.Instance.UnlockBook(dataKey);
                 break;
+
             case InteractionType.UnlockCipher:
-                ProgressManager.Instance.UnlockCipher(dataKey);
+                if (!string.IsNullOrEmpty(dataKey))
+                    ProgressManager.Instance.UnlockCipher(dataKey);
+
+                // Deactivate parent GameObject
+                transform.parent.gameObject.SetActive(false);
+                break;
+
+            case InteractionType.Trigger:
+                // Trigger type just shows UI
                 break;
         }
 
-        UIManager.Instance.ShowInteractionResult();
+        if (resultPanel != null)
+        {
+            resultPanel.SetActive(true);
+            GameManager.Instance.SetUIState(true); // Stop input
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -39,10 +60,25 @@ public class InteractableComponent : MonoBehaviour, IInteractable
         isPlayerNear = true;
         glowEffect?.SetActive(true);
 
-        if (!ProgressManager.Instance.HasSeenInteractionHint(interactionID))
+        // Only show interactionPanel once
+        if (!hasShownPanel)
         {
-            UIManager.Instance.ShowMessage(interactionMessage);
-            ProgressManager.Instance.MarkInteractionHintSeen(interactionID);
+            if (!string.IsNullOrEmpty(interactionID))
+            {
+                if (!ProgressManager.Instance.HasSeenInteractionHint(interactionID))
+                {
+                    interactionPanel?.SetActive(true);
+                    GameManager.Instance.SetUIState(true); // Stop input
+                    ProgressManager.Instance.MarkInteractionHintSeen(interactionID);
+                    hasShownPanel = true;
+                }
+            }
+            else
+            {
+                interactionPanel?.SetActive(true);
+                GameManager.Instance.SetUIState(true); // Stop input
+                hasShownPanel = true;
+            }
         }
     }
 
@@ -52,7 +88,6 @@ public class InteractableComponent : MonoBehaviour, IInteractable
 
         isPlayerNear = false;
         glowEffect?.SetActive(false);
-        UIManager.Instance.HideMessage();
     }
 
     private void Update()

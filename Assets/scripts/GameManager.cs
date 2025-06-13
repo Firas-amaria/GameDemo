@@ -44,6 +44,6 @@ public class GameManager : MonoBehaviour
     public void SetUIState(bool isUIOpen)
     {
         isInputBlocked = isUIOpen;
-        Debug.Log("Input blocked: " + isInputBlocked);
+        //Debug.Log("Input blocked: " + isInputBlocked);
     }
 }

@@ -9,13 +9,13 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
-	"picker_window_position_offset.075BCD15" = "408;251;320;550"
+	"picker_window_position_offset.075BCD15" = "414;251;320;550"
 	"picker_visibility_flags.075BCD15" = "264"
 	"picker_item_size.075BCD15" = "96"
 	"picker_inspector.075BCD15" = "0"
-	"last_search.66F56946" = "inventory"
+	"last_search.66F56946" = "bookReader"
 	"OpenInspectorPreview.66F56946" = "0"
-	"currentGroup.66F56946" = "all"
+	"currentGroup.66F56946" = "scene"
 }
 providers = {
 	asset = {
@@ -72,8 +72,10 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
-	"t:invent"
+	"t:bookReade"
 	""
+	"t:d"
+	"t:invent"
 	"t:intera"
 	"t:GameObject"
 	"t:GameObject t"

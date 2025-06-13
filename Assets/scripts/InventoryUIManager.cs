@@ -78,7 +78,7 @@ public class InventoryUIManager : MonoBehaviour
         if (slotKey.StartsWith("room1")) return room1Container;
         if (slotKey.StartsWith("room2")) return room2Container;
         if (slotKey.StartsWith("room3")) return room3Container;
-        Debug.LogWarning("No matching container for " + slotKey);
+        //Debug.LogWarning("No matching container for " + slotKey);
         return room1Container;
     }
 
@@ -103,7 +103,7 @@ public class InventoryUIManager : MonoBehaviour
 
     public void OpenBookReader()
     {
-        Debug.Log("Opening book: " + currentBook.title);
-        BookReader.Instance.OpenBook(currentBook);
+        //Debug.Log("Opening book: " + currentBook.title);
+        BookReaderUI.Instance.OpenBook(currentBook);
     }
 }
