@@ -80,6 +80,11 @@ public class InteractableComponent : MonoBehaviour, IInteractable
                 hasShownPanel = true;
             }
         }
+
+        if (interactionType == InteractionType.Trigger)
+        {
+            transform.parent.gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)

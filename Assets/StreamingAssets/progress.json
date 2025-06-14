@@ -1,8 +1,6 @@
 {
     "currentRoom": "room1",
     "unlockedBooks": [
-        "room2_slot1",
-        "room3_slot1",
         "room1_slot1",
         "room1_slot2",
         "room1_slot3"
