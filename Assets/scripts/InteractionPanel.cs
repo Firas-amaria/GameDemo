@@ -8,4 +8,5 @@ public class InteractionPanel : MonoBehaviour
         gameObject.SetActive(false);
         GameManager.Instance?.SetUIState(false); 
     }
-}
+} 
+
