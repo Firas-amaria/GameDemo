@@ -29,6 +29,7 @@ public class DoorPanelController : MonoBehaviour
         {
             linkedDoor.isSolved = true;
             GameManager.Instance?.SetUIState(false);
+            Debug.Log(linkedDoor.sceneToLoad);
             SceneManager.LoadScene(linkedDoor.sceneToLoad);
         }
         else

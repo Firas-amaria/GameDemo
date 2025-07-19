@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Pool;
 using UnityEngine.SceneManagement;
 
 public class DoorInteractable : MonoBehaviour, IInteractable
@@ -28,9 +29,12 @@ public class DoorInteractable : MonoBehaviour, IInteractable
                 GameManager.Instance?.SetUIState(true);
 
                 // Set this door as the active reference for the panel controller
+                Debug.Log(sceneToLoad);
+
                 DoorPanelController controller = doorPanel.GetComponent<DoorPanelController>();
                 if (controller != null)
                 {
+                    Debug.Log("2nd"+sceneToLoad);
                     controller.SetLinkedDoor(this);
                 }
 

@@ -12,6 +12,7 @@ public class BookReaderUI : MonoBehaviour
     [Header("Panels & Controls")]
     public GameObject readerPanel;
     public TMP_InputField pageInputField;
+
     public TMP_Text titleText;
 
     [Header("Page Navigation Buttons")]
@@ -137,6 +138,9 @@ public class BookReaderUI : MonoBehaviour
         {
             string selectedText = pageInputField.text.Substring(realStart, length);
             cipherInputField.text = selectedText;
+            cipherInputField.textComponent.textWrappingMode = TextWrappingModes.Normal;
+            cipherInputField.textComponent.enableAutoSizing = false;
+            cipherInputField.textComponent.alignment = TextAlignmentOptions.TopLeft;
         }
     }
 
@@ -201,6 +205,10 @@ public class BookReaderUI : MonoBehaviour
         }
 
         cipherOutputField.text = result;
+        cipherOutputField.textComponent.textWrappingMode = TextWrappingModes.Normal;
+        cipherOutputField.textComponent.enableAutoSizing = false;
+        cipherOutputField.textComponent.alignment = TextAlignmentOptions.TopLeft;
+
     }
 
     private void SaveDecryptedNote()

@@ -6,6 +6,7 @@
         "room1_slot3"
     ],
     "unlockedCiphers": [
-        "Caesar"
+        "Caesar",
+        "Vigenere"
     ]
 }

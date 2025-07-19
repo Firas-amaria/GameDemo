@@ -282,7 +282,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.5, y: 2.5}
+  m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
 --- !u!114 &1150625503864567507
 MonoBehaviour:
@@ -299,5 +299,6 @@ MonoBehaviour:
   interactionType: 0
   dataKey: room1_slot1
   interactionID: drawer1
-  interactionMessage: Press X to open the drawer
+  interactionPanel: {fileID: 0}
+  resultPanel: {fileID: 0}
   glowEffect: {fileID: 6899856664069275632}
