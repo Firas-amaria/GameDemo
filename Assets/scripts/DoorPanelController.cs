@@ -1,6 +1,8 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI; 
+using System.Collections; 
 
 public class DoorPanelController : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class DoorPanelController : MonoBehaviour
     public GameObject noteItemPrefab;    // A prefab for showing each note
 
     private DoorInteractable linkedDoor;
+    private Coroutine flashCoroutine;
 
     void OnEnable()
     {
@@ -29,12 +32,33 @@ public class DoorPanelController : MonoBehaviour
         {
             linkedDoor.isSolved = true;
             GameManager.Instance?.SetUIState(false);
-            Debug.Log(linkedDoor.sceneToLoad);
+
+            // ✅ Save the scene that will be loaded as the new currentRoom
+            if (ProgressManager.Instance != null)
+            {
+                ProgressManager.Instance.SetCurrentRoom(linkedDoor.sceneToLoad);
+            }
+
             SceneManager.LoadScene(linkedDoor.sceneToLoad);
         }
         else
         {
-            Debug.Log("Incorrect password.");
+            passwordInput.text = "";
+            if (flashCoroutine != null)
+                StopCoroutine(flashCoroutine);
+            flashCoroutine = StartCoroutine(FlashInputFieldRed());
+        }
+    }
+
+    private IEnumerator FlashInputFieldRed()
+    {
+        Image bg = passwordInput.GetComponent<Image>();
+        if (bg != null)
+        {
+            Color originalColor = bg.color;
+            bg.color = Color.red;
+            yield return new WaitForSeconds(0.4f);
+            bg.color = originalColor;
         }
     }
 

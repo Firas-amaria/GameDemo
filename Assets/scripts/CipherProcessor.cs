@@ -6,9 +6,8 @@ public class CipherProcessor : MonoBehaviour
 
     private void Awake()
     {
-        // Singleton pattern for global access
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        Instance = this;
+
     }
 
     // ================================

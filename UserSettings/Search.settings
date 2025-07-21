@@ -13,9 +13,9 @@ scopes = {
 	"picker_visibility_flags.075BCD15" = "264"
 	"picker_item_size.075BCD15" = "96"
 	"picker_inspector.075BCD15" = "0"
-	"last_search.66F56946" = ""
+	"last_search.66F56946" = "inventory"
 	"OpenInspectorPreview.66F56946" = "0"
-	"currentGroup.66F56946" = "scene"
+	"currentGroup.66F56946" = "asset"
 }
 providers = {
 	asset = {
@@ -72,6 +72,10 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"inventory"
+	"in"
+	"SetActive"
+	"GameObject.Find"
 	""
 	"interac"
 	"t:bookReade"
@@ -89,10 +93,9 @@ recentSearches = [
 searchItemFavorites = [
 ]
 savedSearchesSortOrder = 0
-showSavedSearchPanel = false
+showSavedSearchPanel = true
 hideTabs = false
-expandedQueries = [
-]
+expandedQueries = [-1765347274 961552606]
 queryBuilder = true
 ignoredProperties = "id;name;classname;imagecontentshash"
 helperWidgetCurrentArea = "all"

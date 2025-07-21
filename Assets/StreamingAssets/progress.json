@@ -1,12 +1,21 @@
 {
-    "currentRoom": "room1",
+    "currentRoom": "Room 1",
     "unlockedBooks": [
         "room1_slot1",
-        "room1_slot2",
-        "room1_slot3"
+        "room1_slot3",
+        "room1_slot2"
     ],
     "unlockedCiphers": [
-        "Caesar",
-        "Vigenere"
+        "Caesar"
+    ],
+    "interactionHintsShown": [
+        {
+            "id": "Tutorial",
+            "seen": true
+        },
+        {
+            "id": "PressX",
+            "seen": true
+        }
     ]
 }

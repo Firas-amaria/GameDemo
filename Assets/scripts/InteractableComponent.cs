@@ -7,7 +7,7 @@ public enum InteractionType
     Trigger
 }
 
-public class InteractableComponent : MonoBehaviour, IInteractable
+public class InteractableComponent : MonoBehaviour, Interactable
 {
     [Header("Interaction Settings")]
     public InteractionType interactionType;

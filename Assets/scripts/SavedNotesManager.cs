@@ -17,18 +17,10 @@ public class SavedNotesManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            //Debug.Log("SavedNotesManager ready");
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
 
-        filePath = Path.Combine(Application.streamingAssetsPath, "saved_notes.json");
+        Instance = this;
+
+        filePath = Path.Combine(Application.streamingAssetsPath, "savedNotes.json");
         LoadNotes();
     }
 

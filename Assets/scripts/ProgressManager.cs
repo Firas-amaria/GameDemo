@@ -3,12 +3,19 @@ using UnityEngine;
 using System.IO;
 
 [System.Serializable]
+public class HintEntry
+{
+    public string id;
+    public bool seen;
+}
+
+[System.Serializable]
 public class ProgressData
 {
-    public string currentRoom = "room1";
+    public string currentRoom = "Room 1";
     public List<string> unlockedBooks = new List<string>();
     public List<string> unlockedCiphers = new List<string>();
-    public Dictionary<string, bool> interactionHintsShown = new Dictionary<string, bool>();
+    public List<HintEntry> interactionHintsShown = new List<HintEntry>();
 }
 
 public class ProgressManager : MonoBehaviour
@@ -20,13 +27,9 @@ public class ProgressManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-            Instance = this;
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
+
+        Instance = this;
+
 
         filePath = Path.Combine(Application.streamingAssetsPath, "progress.json");
         //Debug.Log("ProgressManager: Using file path: " + filePath);
@@ -37,32 +40,35 @@ public class ProgressManager : MonoBehaviour
     {
         if (File.Exists(filePath))
         {
-            //Debug.Log("ProgressManager: File found. Loading progress.");
             string json = File.ReadAllText(filePath);
-            //Debug.Log("ProgressManager: JSON content:\n" + json);
             data = JsonUtility.FromJson<ProgressData>(json);
 
-            if (data.unlockedCiphers == null)
-                Debug.LogWarning("ProgressManager: unlockedCiphers list is NULL after load!");
-            else if (data.unlockedCiphers.Count == 0)
-                Debug.LogWarning("ProgressManager: unlockedCiphers list is EMPTY.");
-            //else
-            //    Debug.Log("ProgressManager: unlockedCiphers contains: " + string.Join(", ", data.unlockedCiphers));
+            if (data.interactionHintsShown == null)
+            {
+                //Debug.LogWarning("[ProgressManager] interactionHintsShown list is NULL — initializing.");
+                data.interactionHintsShown = new List<HintEntry>();
+            }
+
+            //Debug.Log("[ProgressManager] Progress loaded successfully.");
         }
         else
         {
-            //Debug.LogWarning("ProgressManager: File NOT FOUND! Creating new one.");
+            Debug.LogWarning("[ProgressManager] No progress file found — creating new.");
             data = new ProgressData();
             SaveProgress();
         }
     }
 
+
+
     public void SaveProgress()
-    {
-        string json = JsonUtility.ToJson(data, true);
-        File.WriteAllText(filePath, json);
-        //Debug.Log("ProgressManager: Saved progress to file.");
-    }
+{
+    string json = JsonUtility.ToJson(data, true);
+    File.WriteAllText(filePath, json);
+    //Debug.Log($"[ProgressManager] Saved progress to: {filePath}");
+    //Debug.Log($"[ProgressManager] JSON content:\n{json}");
+}
+
 
     public void SetCurrentRoom(string room)
     {
@@ -72,17 +78,38 @@ public class ProgressManager : MonoBehaviour
 
     public bool HasSeenInteractionHint(string id)
     {
-        return data.interactionHintsShown.ContainsKey(id) && data.interactionHintsShown[id];
+        foreach (var hint in data.interactionHintsShown)
+        {
+            if (hint.id == id)
+                return hint.seen;
+        }
+        return false;
     }
+
 
     public void MarkInteractionHintSeen(string id)
     {
-        if (!data.interactionHintsShown.ContainsKey(id))
+        foreach (var hint in data.interactionHintsShown)
         {
-            data.interactionHintsShown[id] = true;
-            SaveProgress();
+            if (hint.id == id)
+            {
+                if (!hint.seen)
+                {
+                    hint.seen = true;
+                    //Debug.Log($"[ProgressManager] Marked existing hint '{id}' as seen.");
+                    SaveProgress();
+                }
+                return;
+            }
         }
+
+        // If not found, add new
+        data.interactionHintsShown.Add(new HintEntry { id = id, seen = true });
+        //Debug.Log($"[ProgressManager] Added and marked new hint '{id}' as seen.");
+        SaveProgress();
     }
+
+
 
     public void UnlockBook(string slotKey)
     {
