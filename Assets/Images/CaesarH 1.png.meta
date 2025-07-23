@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b0b7a63130736ec45a85cdbbc00d2f5e
+guid: c6f25f5816bfa2546bd0b968e6ed1f46
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3451699440861859892
-    second: MainMenu_0
+      213: 8795968353964224798
+    second: CaesarH 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MainMenu_0
+      name: CaesarH 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 5904
-        height: 4016
+        width: 600
+        height: 251
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ccfa30c75a91910d0800000000000000
-      internalID: -3451699440861859892
+      spriteID: e117d996d9e811a70800000000000000
+      internalID: 8795968353964224798
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      MainMenu_0: -3451699440861859892
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

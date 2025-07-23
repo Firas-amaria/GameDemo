@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public enum InteractionType
 {
@@ -11,18 +11,39 @@ public class InteractableComponent : MonoBehaviour, Interactable
 {
     [Header("Interaction Settings")]
     public InteractionType interactionType;
-    public string dataKey;        // book slotKey or cipherKey (can be empty for Trigger)
-    public string interactionID;  // one-time panel trigger ID (can be empty)
+    public string dataKey;
+    public string interactionID;
 
     [Header("UI Panels")]
-    public GameObject interactionPanel; // shown only once (set manually in scene)
-    public GameObject resultPanel;      // shown every time after interaction
+    public GameObject interactionPanel;
+    public GameObject resultPanel;
 
     [Header("Visuals")]
     public GameObject glowEffect;
 
     private bool isPlayerNear = false;
     private bool hasShownPanel = false;
+
+    private void Start()
+    {
+        // Check if already unlocked
+        if (!string.IsNullOrEmpty(dataKey))
+        {
+            bool shouldDisable = false;
+
+            if (interactionType == InteractionType.UnlockBook)
+                shouldDisable = ProgressManager.Instance.data.unlockedBooks.Contains(dataKey);
+
+            else if (interactionType == InteractionType.UnlockCipher)
+                shouldDisable = ProgressManager.Instance.data.unlockedCiphers.Contains(dataKey);
+
+            if (shouldDisable)
+            {
+                Debug.Log($"[InteractableComponent] Already unlocked: {dataKey}. Disabling object.");
+                transform.parent.gameObject.SetActive(false);
+            }
+        }
+    }
 
     public void Interact()
     {
@@ -35,21 +56,31 @@ public class InteractableComponent : MonoBehaviour, Interactable
 
             case InteractionType.UnlockCipher:
                 if (!string.IsNullOrEmpty(dataKey))
+                {
                     ProgressManager.Instance.UnlockCipher(dataKey);
 
-                // Deactivate parent GameObject
-                transform.parent.gameObject.SetActive(false);
+                    // ✅ Update GuidePanel UI
+                    if (GuidePanelManager.Instance != null)
+                        GuidePanelManager.Instance.RefreshGuidePanel();
+                    else
+                        Debug.LogWarning("[InteractableComponent] GuidePanelManager.Instance is null. Could not refresh guide panel.");
+                }
                 break;
 
             case InteractionType.Trigger:
-                // Trigger type just shows UI
+                // Do nothing special
                 break;
+        }
+
+        if (interactionType != InteractionType.Trigger)
+        {
+            transform.parent.gameObject.SetActive(false);
         }
 
         if (resultPanel != null)
         {
             resultPanel.SetActive(true);
-            GameManager.Instance.SetUIState(true); // Stop input
+            GameManager.Instance.SetUIState(true);
         }
     }
 
@@ -60,7 +91,6 @@ public class InteractableComponent : MonoBehaviour, Interactable
         isPlayerNear = true;
         glowEffect?.SetActive(true);
 
-        // Only show interactionPanel once
         if (!hasShownPanel)
         {
             if (!string.IsNullOrEmpty(interactionID))
@@ -68,7 +98,7 @@ public class InteractableComponent : MonoBehaviour, Interactable
                 if (!ProgressManager.Instance.HasSeenInteractionHint(interactionID))
                 {
                     interactionPanel?.SetActive(true);
-                    GameManager.Instance.SetUIState(true); // Stop input
+                    GameManager.Instance.SetUIState(true);
                     ProgressManager.Instance.MarkInteractionHintSeen(interactionID);
                     hasShownPanel = true;
                 }
@@ -76,7 +106,7 @@ public class InteractableComponent : MonoBehaviour, Interactable
             else
             {
                 interactionPanel?.SetActive(true);
-                GameManager.Instance.SetUIState(true); // Stop input
+                GameManager.Instance.SetUIState(true);
                 hasShownPanel = true;
             }
         }
@@ -90,7 +120,6 @@ public class InteractableComponent : MonoBehaviour, Interactable
     private void OnTriggerExit2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
-
         isPlayerNear = false;
         glowEffect?.SetActive(false);
     }

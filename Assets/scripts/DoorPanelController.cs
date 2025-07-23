@@ -32,14 +32,21 @@ public class DoorPanelController : MonoBehaviour
         {
             linkedDoor.isSolved = true;
             GameManager.Instance?.SetUIState(false);
-
-            // ✅ Save the scene that will be loaded as the new currentRoom
-            if (ProgressManager.Instance != null)
+            if(linkedDoor.sceneToLoad == "EndScene")
             {
-                ProgressManager.Instance.SetCurrentRoom(linkedDoor.sceneToLoad);
+                Destroy(GameManager.Instance.gameObject);
+                SceneManager.LoadScene("EndScene");
             }
+            else
+            {
+                if (ProgressManager.Instance != null)
+                {
+                    ProgressManager.Instance.SetCurrentRoom(linkedDoor.sceneToLoad);
+                }
 
-            SceneManager.LoadScene(linkedDoor.sceneToLoad);
+                SceneManager.LoadScene(linkedDoor.sceneToLoad);
+            }
+            
         }
         else
         {

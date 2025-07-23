@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Caesar-Cipher_0: 4778667607557975087
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
