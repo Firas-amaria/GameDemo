@@ -2,30 +2,28 @@
   "books": [
     {
       "slotKey": "room1_slot1",
-      "title": "Echoes of the Labyrinth",
-      "genre": "Cryptography",
-      "author": "Professor R. Elias",
-      "description": "The first puzzle of the academy, written in twisted letters.",
+      "title": "Journal of Apprentice Lysa",
+      "genre": "Journal",
+      "author": "Archivist V.",
+      "description": "Journal through the time working in the tower of knowledge",
       "pages": [
-        "Entry 1 - The walls speak in riddles, or so the students claim.",
-        "They say the hallway hums when no one is there.",
-        "If you listen long enough, the humming resolves into rhythm.",
-        "I believe there is order in the nonsense... perhaps a shift?",
-        "Encrypted note found behind the painting: Wklv lv wkh iluvw phvvdjh."
+        "Entry 7 – I overslept again. This is the 7th morning in a row that the tower bells failed to wake me. I suspect someone has been tampering with them, but Professor Elric insists it’s just “exam stress.” Regardless, I’ve now missed breakfast for a week! straight.",
+        "Entry 8 – While cleaning the alchemy bench, I found 7 empty vials, all unlabeled. They were hidden beneath a dusty cloth — perhaps leftover from the advanced students. It felt deliberate. Why 7? Why not six or eight? I’m logging this in case it matters.",
+        "Entry 9 – On my walk to the greenhouse, I passed the raven statue again. Someone had left 7 feathers at its base, carefully arranged in a fan. I looked around — no one nearby. Either I’m being followed, or someone is leaving signs. I’ll keep counting.",
+        "Ybklm , Ybox"
       ]
     },
     {
       "slotKey": "room1_slot2",
-      "title": "Notes from the East Wing",
+      "title": "Notes of Initiate Bram",
       "genre": "Cipher Record",
       "author": "Archivist M.",
       "description": "Recovered fragments from a student’s journal.",
       "pages": [
-        "Day 4 - While cataloging old scrolls, I noticed a repeated pattern: A, D, G...",
-        "It's as if the letters moved forward — by three?",
-        "I remember someone muttering: 'Three steps forward reveals the path.'",
-        "Most of the scrolls were irrelevant, but one contained this odd script:",
-        "Brx duh qrw dorrqh lq wklv sodfh."
+        "Entry 12 – The academy bells rang at 12:00 sharp today. Not a minute earlier or later. It startled me — I had just been reading about temporal alignment in the archives. The number keeps coming up in my notes: 12 circles, 12 glyphs, 12 seconds.",
+        "Entry 13 – We had to recite the ancient chant again. Professor Maelin insists we repeat it 12 times in a row to “maintain mental discipline.” It’s exhausting. I lost my place halfway through and got scolded in front of everyone.",
+        "Entry 14 – I found a diagram with 12 points arranged like a clock, hidden under loose floor tiles in Study Hall B. It looked like some kind of summoning pattern, but incomplete. Why would someone hide that? Is it a clue, or a warning?",
+        "Gsqcbr , Hvfss"
       ]
     },
     {
@@ -35,59 +33,65 @@
       "author": "Unknown",
       "description": "A silent voice from the walls of Room 1.",
       "pages": [
-        "I watched them walk past the old gate again.",
-        "None of them noticed the third stone out of line on the floor.",
-        "Always the number three. Three torches. Three locks. Three eyes in the statue.",
-        "Maybe it's a code. Maybe it’s always been a code.",
-        "They left a final warning scratched into the floor: Wkh grru vwdqgv ehwzhhq wkh wudxwkv."
+        "Entry 14 – I’ve just realized that today marks 14 days since I began my independent study. Two full weeks locked in these dusty halls. I thought I’d go mad by now, but the quiet has become… comforting.",
+        "Entry 15 – I discovered that the main staircase has exactly 14 steps between each floor. I never noticed before. It's consistent — no matter the tower. Was that deliberate? Some kind of architectural code? It must mean something.",
+        "Entry 16 – I tried meditating in the astronomy dome tonight. I lit 14 candles, one for each phase in the lunar chart. Something shifted in the room — I swear the shadows moved. I left before anything else could happen.",
+        "Ftudp , Eqhqz"
       ]
     },
     {
-      "slotKey": "room2_slot1",
-      "title": "Alchemist’s Log",
-      "genre": "Alchemy",
-      "author": "Vincent E.",
-      "description": "A personal log describing failed transformations.",
-      "pages": [
-        "Attempt #14 failed again — smoke and green residue.",
-        "The flask cracked under a blue flame. Next time, less salt.",
-        "Reminder: never mix mercury with powdered moonstone."
-      ]
+	"slotKey": "room2_slot1",
+	"title": "Whispers Beneath",
+	"genre": "Exploration Journal",
+	"author": "I. Merrow",
+	"description": "Notes from a quiet journey through the sealed sublevel.",
+	"pages": [
+		"Day 5 – The hallway past the archives was colder than I remembered. No wind, no sound. Only the strange shimmer on the tiles — almost like flickering *Light* bouncing from nowhere.",
+		"Day 6 – I stood in complete darkness for nearly an hour, yet something danced across my eyes. A pattern — pulsing, shifting. My eyes followed it instinctively, like a moth.",
+		"Day 7 – I placed my hand on the wall and it glowed faintly beneath my fingers. The word echoed in my mind: *light*. I don’t know why, but I wrote it down immediately.",
+		"izy llrghw idge dln am mot oikk ssld"
+	]
     },
     {
       "slotKey": "room2_slot2",
-      "title": "Field Notes: Herbs & Shadows",
-      "genre": "Research",
-      "author": "Dr. E. Hawthorne",
-      "description": "Sketches and field notes about plant reactions to light.",
+      "title": "The Ciphered Path",
+      "genre": "Riddle Notes",
+      "author": "L. Daven",
+      "description": "Writings from a student obsessed with encrypted doorways.",
       "pages": [
-        "Sunroot glows under moonlight, dies in daylight.",
-        "Shadowvine curls when near heat. Possesses memory-like response.",
-        "Bring samples from Room 3’s greenhouse."
+        "Entry 11 – I revisited the journal I found yesterday — the one buried under the loose tile. The final word in it feels important, almost... like a key.",
+        "Entry 12 – Professor Talwin once said, 'Some doors don’t require strength, only the correct word whispered in silence.' I think I finally understand what he meant.",
+        "Entry 13 – I will try using the same method again. If the key worked once, it might unlock this as well. I just hope whoever left the message meant for it to be used twice.",
+	"qhn fxsbmlrm vlr cxb Dxeo ib IEAMU"
       ]
     },
     {
       "slotKey": "room3_slot1",
-      "title": "Watcher’s Observation",
-      "genre": "Surveillance",
-      "author": "Anonymous",
-      "description": "Unpublished report detailing mysterious movements.",
+      "title": "Echoes of the Gate",
+      "genre": "Cipher Manual",
+      "author": "T. Nareth",
+      "description": "Cryptic reflections about three steps to unlock what lies beyond.",
       "pages": [
-        "Subject moved at 2:13 AM. No footsteps recorded.",
-        "Window opened without a breeze. Need thermal sweep.",
-        "Possible link to lower chamber sigils."
+        "The first digit was always the hardest to grasp. I remember struggling with it — five failed attempts before I got it right. That number stuck in my head like a lesson burned into memory.",
+        "Then came the second. It felt easier, lighter. Only three minor adjustments were needed before things clicked into place. Three tiny movements, but they changed everything.",
+        "And the last one… it took seven hours. Seven long, silent hours before the final alignment was achieved. I’ll never forget that number. The trio has meaning together.",
+	"They may not tell you this, but the true key is formed not by standing still — but by taking each step forward, and **adding** the journey together.",
+	"Qtcde wpeepc td M , Dpnzyo td C ,Estco td L",
+	"In case it not clear by now , please take the all the three numbers you found in the 1st room and Add them with each other for the KEY."
       ]
     },
     {
       "slotKey": "room3_slot2",
-      "title": "Dust & Echoes",
-      "genre": "Poetry",
-      "author": "Lyra Vale",
-      "description": "A collection of short poetic fragments left in the academy walls.",
+      "title": "Memory of the Passage",
+      "genre": "Encrypted Memoir",
+      "author": "S. Thale",
+      "description": "A quiet confirmation that the answer was always known.",
       "pages": [
-        "We walked with shadows, yet they knew our names.",
-        "Dust settled not, for silence was never still.",
-        "Let the echoes sing, when memory fades."
+        "There was a time when I thought I'd lost it — the word that unlocked the second gate. But I didn’t lose it. I wrote it down. I kept it. I saved it, didn’t I?",
+        "The halls may twist and shift, but memory stays. You don’t need to search again. Just look at what you’ve already claimed.",
+        "I trust that what I saved will lead me through this final barrier. I only need to apply it again — the same way as before.",
+	"Nhrqd txtqaz bs R , Bqyte ea W ,Sftba ip A",
+	"and again just in case , the key to the secret message is the password of the 2nd room , do you rememeber it ?"
       ]
     }
   ]
