@@ -32,8 +32,23 @@ public class MainMenuManager : MonoBehaviour
         if (File.Exists(progressFilePath))
         {
             File.Delete(progressFilePath);
+
+            string metaPath = progressFilePath + ".meta";
+            if (File.Exists(metaPath))
+                File.Delete(metaPath);
+
+            //Debug.Log("[End] Deleted old progress.json and its .meta");
+        }
+
+        if (File.Exists(savedNotesFilePath))
+        {
             File.Delete(savedNotesFilePath);
-            Debug.Log("[MainMenu] Deleted old progress.json");
+
+            string metaPath = savedNotesFilePath + ".meta";
+            if (File.Exists(metaPath))
+                File.Delete(metaPath);
+
+            //Debug.Log("[End] Deleted saved notes and its .meta");
         }
 
         SceneManager.LoadScene("Room 1");

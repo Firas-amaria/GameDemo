@@ -28,7 +28,11 @@ public class DoorPanelController : MonoBehaviour
     {
         if (linkedDoor == null) return;
 
-        if (passwordInput.text == linkedDoor.correctPassword)
+        string input = passwordInput.text.Trim().ToLower();
+        string correct = linkedDoor.correctPassword.Trim().ToLower();
+
+
+        if (input == correct)
         {
             linkedDoor.isSolved = true;
             GameManager.Instance?.SetUIState(false);
