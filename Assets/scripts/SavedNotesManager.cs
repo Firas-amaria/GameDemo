@@ -12,6 +12,8 @@ public class SavedNotesManager : MonoBehaviour
 {
     public static SavedNotesManager Instance;
 
+    public bool disableFileIO = false;//For Unit Testing
+
     private string filePath;
     public SavedNoteDatabase noteDatabase;
 
@@ -69,7 +71,10 @@ public class SavedNotesManager : MonoBehaviour
 
     private void WriteToFile()
     {
+        if (disableFileIO) return;
+
         string json = JsonUtility.ToJson(noteDatabase, true);
         File.WriteAllText(filePath, json);
     }
+
 }

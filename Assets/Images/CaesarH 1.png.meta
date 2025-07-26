@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CaesarH 1_0: 8795968353964224798
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

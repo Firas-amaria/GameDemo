@@ -24,20 +24,23 @@ public class ProgressManager : MonoBehaviour
 
     public ProgressData data;
     private string filePath;
+    public bool disableFileIO = false; // <-- Add this
 
     private void Awake()
     {
-
         Instance = this;
-
-
         filePath = Path.Combine(Application.streamingAssetsPath, "progress.json");
-        //Debug.Log("ProgressManager: Using file path: " + filePath);
         LoadProgress();
     }
 
     public void LoadProgress()
     {
+        if (disableFileIO)
+        {
+            data = new ProgressData();
+            return;
+        }
+
         if (File.Exists(filePath))
         {
             string json = File.ReadAllText(filePath);
@@ -45,15 +48,11 @@ public class ProgressManager : MonoBehaviour
 
             if (data.interactionHintsShown == null)
             {
-                //Debug.LogWarning("[ProgressManager] interactionHintsShown list is NULL — initializing.");
                 data.interactionHintsShown = new List<HintEntry>();
             }
-
-            //Debug.Log("[ProgressManager] Progress loaded successfully.");
         }
         else
         {
-            Debug.LogWarning("[ProgressManager] No progress file found — creating new.");
             data = new ProgressData();
             SaveProgress();
         }
@@ -62,12 +61,11 @@ public class ProgressManager : MonoBehaviour
 
 
     public void SaveProgress()
-{
-    string json = JsonUtility.ToJson(data, true);
-    File.WriteAllText(filePath, json);
-    //Debug.Log($"[ProgressManager] Saved progress to: {filePath}");
-    //Debug.Log($"[ProgressManager] JSON content:\n{json}");
-}
+    {
+        if (disableFileIO) return;
+        string json = JsonUtility.ToJson(data, true);
+        File.WriteAllText(filePath, json);
+    }
 
 
     public void SetCurrentRoom(string room)
@@ -96,16 +94,13 @@ public class ProgressManager : MonoBehaviour
                 if (!hint.seen)
                 {
                     hint.seen = true;
-                    //Debug.Log($"[ProgressManager] Marked existing hint '{id}' as seen.");
                     SaveProgress();
                 }
                 return;
             }
         }
 
-        // If not found, add new
         data.interactionHintsShown.Add(new HintEntry { id = id, seen = true });
-        //Debug.Log($"[ProgressManager] Added and marked new hint '{id}' as seen.");
         SaveProgress();
     }
 
@@ -133,13 +128,11 @@ public class ProgressManager : MonoBehaviour
     {
         if (data == null)
         {
-            //Debug.LogWarning("ProgressManager: data object is NULL when GetUnlockedCiphers called.");
             return new List<string>();
         }
 
         if (data.unlockedCiphers == null)
         {
-            //Debug.LogWarning("ProgressManager: unlockedCiphers is NULL in GetUnlockedCiphers.");
             return new List<string>();
         }
 
